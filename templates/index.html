@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Stay up to date with the latest Google BigQuery release notes — browse, search, and share updates on X." />
+  <title>BigQuery Release Notes</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📋</text></svg>" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+
+  <!-- ── Header ─────────────────────────────────────────────── -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">
+        <div class="logo-icon">BQ</div>
+        <div class="logo-text">
+          <h1>BigQuery Release Notes</h1>
+          <span>Google Cloud Feed Viewer</span>
+        </div>
+      </div>
+      <button id="btn-refresh" class="btn-refresh" aria-label="Refresh feed">
+        <span class="icon">
+          <!-- Refresh SVG icon -->
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="23 4 23 10 17 10" />
+            <polyline points="1 20 1 14 7 14" />
+            <path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15" />
+          </svg>
+        </span>
+        <span>Refresh</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ── Main Content ───────────────────────────────────────── -->
+  <main class="container">
+    <div class="status-bar">
+      <div class="count" id="count"></div>
+      <div class="timestamp" id="timestamp"></div>
+    </div>
+    <section class="cards" id="feed" aria-live="polite">
+      <!-- Cards injected by JS -->
+    </section>
+  </main>
+
+  <!-- ── Toast ──────────────────────────────────────────────── -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
